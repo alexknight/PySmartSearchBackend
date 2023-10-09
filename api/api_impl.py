@@ -4,7 +4,7 @@ from flask import request, jsonify
 
 from service import web_scraper, api_search_engine
 from service import simple_similar as similar
-from utils.logger import logger
+# from utils.logger import logger
 
 
 def scrape_and_store(site):
@@ -17,7 +17,7 @@ def scrape_and_store(site):
 def search():
     try:
         query = request.get_json()
-        logger.info("query=%s", query)
+        # logger.info("query=%s", query)
         if not query:
             return jsonify({"error": "Invalid JSON input"}), 400
 
@@ -59,7 +59,7 @@ def match_data():
     try:
         req = request.get_json()
         # {"scraped_data":[], "query": ""}
-        logger.info("req=%s", req)
+        # logger.info("req=%s", req)
         matched_data, err = similar.perform_vector_matching(req.get("query"), req.get("scraped_data"))
         if err:
             return jsonify({"error": str(err)}), 500

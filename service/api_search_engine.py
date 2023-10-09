@@ -5,7 +5,7 @@ import urllib
 import requests
 
 from utils.http import request
-from utils.logger import logger
+# from utils.logger import logger
 
 # Global Variables
 all_sites = []
