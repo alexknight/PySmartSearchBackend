@@ -1,5 +1,7 @@
 
 from flask import Flask, jsonify
+
+from api.api_impl import search, match_data
 from api.api_routes import api_bp
 
 app = Flask(__name__)
@@ -17,3 +19,13 @@ def search1():
 @app.route('/', methods=["GET"])
 def search2():
     return jsonify({"hello": "world"})
+
+
+@app.route('/search', methods=['POST'])
+def search_route():
+    return search()
+
+
+@app.route('/match_data', methods=['POST'])
+def match_data_route():
+    return match_data()
