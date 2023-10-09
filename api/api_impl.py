@@ -66,3 +66,7 @@ def match_data():
         return jsonify({"data": matched_data, "message": "Success"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+def hello():
+    return jsonify({"hello": "world"}),200

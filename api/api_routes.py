@@ -10,3 +10,8 @@ def search_route():
 @api_bp.route('/match_data', methods=['POST'])
 def match_data_route():
     return match_data()
+
+
+@api_bp.route('/home', methods=['GET'])
+def he():
+    return hello()
