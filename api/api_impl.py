@@ -2,7 +2,8 @@ import concurrent.futures
 
 from flask import request, jsonify
 
-from service import web_scraper, similar, api_search_engine
+from service import web_scraper, api_search_engine
+from service import simple_similar as similar
 from utils.logger import logger
 
 
